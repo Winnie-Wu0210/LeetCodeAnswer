@@ -1,21 +1,21 @@
 var rotate = function(nums, k) {
-    let timer = k % nums.length
-    var reserve = function(start, end, arr) {
-        let left = start
-        let right = end
-        while(left <= right) {
-            const m = arr[left]
-            arr[left] = arr[right]
-            arr[right] = m
-            left++
-            right--
-        }
-        return arr
-    }
-    reserve(0, nums.length-1, nums)
-    reserve(0, timer-1, nums)
-    reserve(timer, nums.length-1, nums)
-    return nums
+  let timer = k % nums.length
+  var reserve = function(start, end, arr) {
+      let left = start
+      let right = end
+      while(left <= right) {
+          const m = arr[left]
+          arr[left] = arr[right]
+          arr[right] = m
+          left++
+          right--
+      }
+      return arr
+  }
+  reserve(0, nums.length-1, nums)
+  reserve(0, timer-1, nums)
+  reserve(timer, nums.length-1, nums)
+  return nums
 };
 
 var nums = 
